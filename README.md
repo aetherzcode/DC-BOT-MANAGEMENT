@@ -1,6 +1,6 @@
 # DC-BOT-MANAGEMENT
 
-![AETHERz](https://i.ibb.co.com/cwS0XJW/bot-icon-18.png)
+![AETHERz](https://i.ibb.co.com/RcGRCHX/14006377.png)
 ![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node.js Version](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)
 ![Discord.js Version](https://img.shields.io/badge/discord.js-%3E%3D14.0.0-blue.svg)
@@ -44,7 +44,7 @@ A multipurpose Discord bot designed to help manage your server efficiently. This
    ```plaintext
    TOKEN=your_bot_token
    OWNER_ID=your_owner_id
-   PREFIX=your_command_prefix
+   MONGO_URI=your_mongodb
    ```
 
 5. **Run the bot**:
