@@ -45,6 +45,7 @@ A multipurpose Discord bot designed to help manage your server efficiently. This
    TOKEN=your_bot_token
    OWNER_ID=your_owner_id
    MONGO_URI=your_mongodb
+   PREFIX=/
    ```
 
 5. **Run the bot**:
