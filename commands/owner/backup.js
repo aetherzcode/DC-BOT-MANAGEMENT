@@ -13,7 +13,6 @@ module.exports = {
             return interaction.reply({ content: 'You do not have permission to use this command.', ephemeral: true });
         }
 
-        // Assuming you have a function to export your database
         const backupData = await mongoose.connection.db.collection('yourCollectionName').find({}).toArray();
         fs.writeFileSync('backup.json', JSON.stringify(backupData, null, 2));
         await interaction.reply('✅ Database backup created successfully!');

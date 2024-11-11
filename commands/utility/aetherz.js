@@ -3,8 +3,8 @@ const { SlashCommandBuilder } = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('aetherz')
-        .setDescription('Responds with AETHERz is online!!'),
+        .setDescription('Responds AETHERz!!'),
     async execute(interaction) {
-        await interaction.reply('AETHERz is online!!');
+        await interaction.reply('Yoshhh AETHERz in here!!');
     },
 };

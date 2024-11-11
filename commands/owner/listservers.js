@@ -18,7 +18,7 @@ module.exports = {
         }
 
         const embed = new EmbedBuilder()
-            .setColor('GREEN')
+            .setColor(0x1E90FF) // Using hexadecimal color for blue
             .setTitle('📜 List of Servers')
             .setDescription('Here are the servers the bot is currently in:')
             .setTimestamp();

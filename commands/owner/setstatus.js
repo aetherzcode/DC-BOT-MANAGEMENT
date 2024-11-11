@@ -1,5 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
+let currentStatus = 'online'; // Variabel untuk menyimpan status saat ini
+
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('setstatus')
@@ -17,6 +19,10 @@ module.exports = {
 
         const status = interaction.options.getString('status');
         await interaction.client.user.setPresence({ activities: [{ name: status }], status: 'online' });
+        currentStatus = status; // Simpan status yang telah diatur
         await interaction.reply(`✅ Status set to: **${status}**`);
     },
 };
+
+// Ekspor variabel currentStatus agar dapat diakses di file lain
+module.exports.currentStatus = currentStatus;

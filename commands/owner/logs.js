@@ -20,7 +20,7 @@ module.exports = {
 
         const logEmbed = new EmbedBuilder()
             .setTitle('📜 Bot Logs')
-            .setColor('BLUE')
+            .setColor(0x1E90FF) // Using hexadecimal color for blue
             .setTimestamp();
 
         logs.forEach(log => {

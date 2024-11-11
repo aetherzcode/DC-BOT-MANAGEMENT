@@ -12,13 +12,13 @@ module.exports = {
 
             // Check for command permissions
             if (command.permissions) {
-                const missingPermissions = command.permissions.filter(permission => 
+                const missingPermissions = command.permissions.filter(permission =>
                     !interaction.guild.me.permissions.has(permission)
                 );
                 if (missingPermissions.length > 0) {
-                    return await interaction.reply({ 
-                        content: `⚠️ | I am missing the following permissions to execute this command: \`${missingPermissions.join(', ')}\`.`, 
-                        ephemeral: true 
+                    return await interaction.reply({
+                        content: `⚠️ | I am missing the following permissions to execute this command: \`${missingPermissions.join(', ')}\`.`,
+                        ephemeral: true
                     });
                 }
             }
@@ -27,9 +27,9 @@ module.exports = {
             if (command.name === 'mute' || command.name === 'unmute') {
                 const member = interaction.options.getMember('user');
                 if (!member.voice.channel) {
-                    return await interaction.reply({ 
-                        content: `🚫 | The user must be in a voice channel to be ${command.name === 'mute' ? 'muted' : 'unmuted'}.`, 
-                        ephemeral: true 
+                    return await interaction.reply({
+                        content: `🚫 | The user must be in a voice channel to be ${command.name === 'mute' ? 'muted' : 'unmuted'}.`,
+                        ephemeral: true
                     });
                 }
             }
@@ -78,8 +78,7 @@ async function createTicket(interaction, ticketData) {
     const ticketChannel = await interaction.guild.channels.create({
         name: channelName,
         type: 0, // 'GUILD_TEXT' is now deprecated, use type 0 for text channels
-        permissionOverwrites: [
-            {
+        permissionOverwrites: [{
                 id: interaction.guild.id,
                 deny: [PermissionsBitField.Flags.ViewChannel],
             },
@@ -114,6 +113,6 @@ async function createTicket(interaction, ticketData) {
         logsChannelId: ticketData.logsChannelId, // Assuming this is predefined in ticketData
         staffRoleId: ticketData.staffRoleId // Assuming this is predefined in ticketData
     });
-  
+
     await newTicket.save();
 }
